@@ -1,5 +1,8 @@
+from backend.contracts.schemas import TransactionSchema
 from backend.datasource.api import APICollector
 
-Collector = APICollector()
+schema = TransactionSchema
 
-print(Collector.getData(10))
+Collector = APICollector(schema).start(500)
+
+print(Collector)
